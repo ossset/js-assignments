@@ -15,7 +15,7 @@
  * 
  * @param {array} arr
  * @param {any} value
- * @return {number}
+ * @return {any}
  * 
  * @example
  *    ['Ace', 10, true], 10    => 1 
@@ -23,7 +23,7 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-   throw new Error('Not implemented');
+   return arr.indexOf(value);
 }
 
 /**
@@ -38,7 +38,13 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-   throw new Error('Not implemented');
+   let value = 1;
+   let arr = [];
+   for (let i=0;i<len;i++){
+      arr.push(value);
+      value +=2;
+   }
+   return arr;
 }
 
 
@@ -54,7 +60,8 @@ function generateOdds(len) {
  *    [] => [] 
  */
 function doubleArray(arr) {
-   throw new Error('Not implemented');
+   let result = arr.concat(arr);
+   return result;
 }
 
 
@@ -70,7 +77,10 @@ function doubleArray(arr) {
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
-   throw new Error('Not implemented');
+   let res = arr.filter(function(number) {
+      return number > 0;
+   });
+   return res;
 }
 
 /**
@@ -85,7 +95,11 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
-   throw new Error('Not implemented');
+   let res =[];
+   var x = arr.forEach(function(item) {
+      if (typeof item === 'string')res.push(item);
+   });
+   return res;
 }
 
 /**
@@ -102,7 +116,10 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-   throw new Error('Not implemented');
+   arr.forEach(function (item) {
+      if (item == false|| item === ''||item == NaN||item ===0||item === undefined) arr.splice(arr.indexOf(item),1);
+   });
+   return arr;
 }
 
 /**
